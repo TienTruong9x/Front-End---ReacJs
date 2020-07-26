@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+span{
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+i{
+  cursor: pointer;
+  user-select: none;
+}
+
+.active{
+  border: 2px dashed black;
+}
+#content{
+  border: 3px solid;
+}

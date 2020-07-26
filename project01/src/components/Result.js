@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 
 class Result extends Component {
   
+  setStyle(){
+   return{
+      color:this.props.color,
+      borderColor:this.props.color,
+      fontSize:this.props.fontSize
+   } 
+  }
+
   render(){
     return(
-        <div className="form-group">
-          <label >Nội dung :</label>
-          <input type="text"
-            className="form-control" name="" id="" aria-describedby="helpId" placeholder=""/>
-          <small id="helpId" className="form-text text-muted">Help text</small>
-        </div>
+       <div className="col-12">
+         <p>Color : {this.props.color} - Font-size : {this.props.fontSize} pixcel </p>
+          <div id="content" className="p-2" style={this.setStyle()}>
+            Nội dung thẻ div
+          </div>
+       </div>
     );
   }
 }
