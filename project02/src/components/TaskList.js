@@ -3,11 +3,19 @@ import TaskItem from "./TaskItem";
 
 class TaskList extends Component {
   render() {
-    var taskItem= this.props.tasks.map((task,index)=>{
-      return  <TaskItem key={index} task={task} index={index} onDelete={this.props.onDelete}></TaskItem>
+    var taskItem = this.props.tasks.map((task, index) => {
+      return (
+        <TaskItem
+          key={index}
+          task={task}
+          index={index}
+          onDelete={this.props.onDelete}
+          onEdit={this.props.onEdit}
+          onChangeStatus={this.props.onChangeStatus}
+        ></TaskItem>
+      );
     });
     return (
-      
       <div className="tasklist">
         <table className="table text-center">
           <thead className="thead-dark">
@@ -18,9 +26,7 @@ class TaskList extends Component {
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
-            {taskItem}
-          </tbody>
+          <tbody>{taskItem}</tbody>
         </table>
       </div>
     );

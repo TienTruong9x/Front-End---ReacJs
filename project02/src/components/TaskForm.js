@@ -1,47 +1,51 @@
 import React, { Component } from "react";
-  
+
 class TaskForm extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      id:this.makeid(5),
-      nameTask:'',
-      selectStatus:'0'
-    }
+    this.state = {
+      id: this.makeid(5),
+      nameTask: "",
+      selectStatus: "0",
+    };
   }
 
   makeid(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = "";
+    var characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
- }
+  }
 
-  onChangeTaskForm(event){
-    var name=event.target.name;
-    var value=event.target.value;
+  onChangeTaskForm(event) {
+    var name = event.target.name;
+    var value = event.target.value;
     this.setState({
-      [name]:value
+      [name]: value,
     });
   }
 
-  submitTaskForm(event){
+  submitTaskForm(event) {
     event.preventDefault();
     this.props.reviceDataFormTaskFormToApp(this.state);
     this.setState({
-      id:this.makeid(5),
-      nameTask:'',
-      selectStatus:'0'
+      id: this.makeid(5),
+      nameTask: "",
+      selectStatus: "0",
     });
   }
 
   render() {
     return (
       <div className="card">
-        <div className="card-header bg-primary text-white"><i className="fa fa-tasks" aria-hidden="true"></i> Add a task</div>
+        <div className="card-header bg-primary text-white">
+          <i className="fa fa-tasks" aria-hidden="true"></i>{" "}
+          {this.props.status === "edit" ? "Edit task" : "Add a task"}
+        </div>
         <div className="card-body">
           <form onSubmit={(event) => this.submitTaskForm(event)}>
             <div className="form-group">
@@ -68,7 +72,8 @@ class TaskForm extends Component {
               <option value={0}>Từ chối</option>
             </select>
             <button type="submit" className="btn btn-success mt-3">
-            <i className="fa fa-plus" aria-hidden="true"></i> Thêm
+              <i className="fa fa-plus" aria-hidden="true"></i>{" "}
+              {this.props.status === "edit" ? "Change" : "Push"}
             </button>
           </form>
         </div>
