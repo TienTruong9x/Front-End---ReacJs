@@ -5,7 +5,7 @@ class Search extends Component {
     return (
       <div className="search">
         <form className="form-inline input-group">
-          <div class="input-group w-100">
+          <div className="input-group w-100">
             <input
               className="form-control "
               type="search"

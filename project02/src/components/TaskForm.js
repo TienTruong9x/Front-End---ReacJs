@@ -1,12 +1,49 @@
 import React, { Component } from "react";
-
+  
 class TaskForm extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      id:this.makeid(5),
+      nameTask:'',
+      selectStatus:'0'
+    }
+  }
+
+  makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }
+
+  onChangeTaskForm(event){
+    var name=event.target.name;
+    var value=event.target.value;
+    this.setState({
+      [name]:value
+    });
+  }
+
+  submitTaskForm(event){
+    event.preventDefault();
+    this.props.reviceDataFormTaskFormToApp(this.state);
+    this.setState({
+      id:this.makeid(5),
+      nameTask:'',
+      selectStatus:'0'
+    });
+  }
+
   render() {
     return (
       <div className="card">
-        <div className="card-header">Thêm Công Việc</div>
+        <div className="card-header bg-primary text-white"><i className="fa fa-tasks" aria-hidden="true"></i> Add a task</div>
         <div className="card-body">
-          <form>
+          <form onSubmit={(event) => this.submitTaskForm(event)}>
             <div className="form-group">
               <label htmlFor="nameTask">Name Task</label>
               <input
@@ -14,15 +51,24 @@ class TaskForm extends Component {
                 className="form-control"
                 id="nameTask"
                 placeholder="Enter name task"
+                name="nameTask"
+                onChange={(event) => this.onChangeTaskForm(event)}
+                value={this.state.nameTask}
+                required
               />
             </div>
-            <select class="custom-select">
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select
+              className="custom-select"
+              name="selectStatus"
+              onChange={(event) => this.onChangeTaskForm(event)}
+              value={this.state.selectStatus}
+            >
+              <option value={2}>Đang xét duyệt</option>
+              <option value={1}>Kích hoạt</option>
+              <option value={0}>Từ chối</option>
             </select>
             <button type="submit" className="btn btn-success mt-3">
-              Thêm
+            <i className="fa fa-plus" aria-hidden="true"></i> Thêm
             </button>
           </form>
         </div>
