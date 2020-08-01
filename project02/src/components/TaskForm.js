@@ -39,6 +39,16 @@ class TaskForm extends Component {
     });
   }
 
+  componentWillReceiveProps(){
+    if(this.props.status==="edit"&&this.props.taskEditting){
+      this.setState({
+        id:this.props.taskEditting.id,
+        nameTask:this.props.taskEditting.nameTask,
+        selectStatus:this.props.taskEditting.selectStatus,
+      })
+    }
+  }
+
   render() {
     return (
       <div className="card">

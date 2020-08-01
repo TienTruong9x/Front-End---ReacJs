@@ -23,7 +23,17 @@ class App extends Component {
 
   sendDataFormTF(newTask) {
     var { tasks } = this.state;
-    tasks.push(newTask);
+    if (this.state.isEditting === "edit") {
+      var indexTask = tasks.findIndex((task) => {
+        return task.id === newTask.id;
+      });
+      tasks[indexTask] = newTask;
+      this.setState({
+        isEditting: "add",
+      });
+    } else {
+      tasks.push(newTask);
+    }
     this.setState({
       tasks: tasks,
     });
@@ -55,7 +65,9 @@ class App extends Component {
         taskEditting: tasks[indexTask],
       },
       () => {
-        console.log(this.state.taskEditting);
+        this.setState({
+          taskEditting: tasks[indexTask],
+        });
       }
     );
   };
@@ -88,6 +100,7 @@ class App extends Component {
                 this.sendDataFormTF(newTask)
               }
               status={this.state.isEditting}
+              taskEditting={this.state.taskEditting}
             ></TaskForm>
           </div>
           <div className="col-8">
