@@ -81,8 +81,8 @@ class TaskForm extends Component {
               <option value={1}>Kích hoạt</option>
               <option value={0}>Từ chối</option>
             </select>
-            <button type="submit" className="btn btn-success mt-3">
-              <i className="fa fa-plus" aria-hidden="true"></i>{" "}
+            <button type="submit" className={this.props.status === "edit" ? "btn btn-warning mt-3" : "btn btn-success mt-3"}>
+              <i className={this.props.status === "edit" ? "fas fa-compress-alt" : "fa fa-plus"}  aria-hidden="true"></i>{" "}
               {this.props.status === "edit" ? "Change" : "Push"}
             </button>
           </form>
