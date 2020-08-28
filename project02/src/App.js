@@ -7,18 +7,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [],
       isEditting: "add",
       taskEditting: [],
     };
-  }
-  componentDidMount() {
-    if (localStorage.getItem("tasks")) {
-      var tasks = JSON.parse(localStorage.getItem("tasks"));
-      this.setState({
-        tasks: tasks,
-      });
-    }
   }
 
   sendDataFormTF(newTask) {
@@ -106,7 +97,6 @@ class App extends Component {
           <div className="col-8">
             <Controls></Controls>
             <TaskList
-              tasks={this.state.tasks}
               onDelete={this.onDelete}
               onEdit={this.onEdit}
               onChangeStatus={this.onChangeStatus}
