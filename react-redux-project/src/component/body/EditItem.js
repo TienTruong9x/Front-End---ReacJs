@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class AddNew extends Component {
+class EditItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,6 +27,7 @@ class AddNew extends Component {
   }
 
   render() {
+    console.log(this.props.editItem);
     return (
       <form onSubmit={this.handleSubmit} className="mt-3">
         <div className="form-group">
@@ -40,7 +41,7 @@ class AddNew extends Component {
               name="title"
               required
               onChange={this.handleChange}
-              value={this.state.title}
+              value={this.props.editItem.title}
             />
           </div>
           <label htmlFor="content">Nội dung NOTE</label>
@@ -51,11 +52,11 @@ class AddNew extends Component {
             name="content"
             required
             onChange={this.handleChange}
-            value={this.state.content}
+            value={this.props.editItem.content}
           />
         </div>
-        <button type="submit" className="btn btn-warning mb-2 btn-block">
-          Submit
+        <button type="submit" className="btn btn-info mb-2 btn-block">
+          Edit
         </button>
       </form>
     );
@@ -64,16 +65,10 @@ class AddNew extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    tes: state
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addDataStore: (newItem) => {
-      dispatch({type:"ADD_NEW",newItem})
-    }
+    editItem: state.editItem
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddNew)
+
+export default connect(mapStateToProps)(EditItem)
 

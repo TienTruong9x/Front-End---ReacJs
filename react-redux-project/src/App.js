@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import Note from "./component/body/Note";
 import AddNew from "./component/body/AddNew";
+import dataFirebase from "./redux/FireBase";
+import { connect } from "react-redux";
+import EditItem from "./component/body/EditItem";
 
 class App extends Component {
   constructor(props) {
@@ -9,9 +12,16 @@ class App extends Component {
     this.state = {};
   }
 
-  getData=(item)=>{
-    console.log(item);
-  }
+  getData = (item) => {
+    dataFirebase.push(item);
+  };
+
+  showForm = () => {
+    if (this.props.isEdit) {
+      return <EditItem></EditItem>;
+    }
+    return <AddNew></AddNew>;
+  };
 
   render() {
     return (
@@ -21,7 +31,7 @@ class App extends Component {
             <div className="col-10">
               <Note></Note>
             </div>
-            <div className="col-2"><AddNew sendData={this.getData}></AddNew></div>
+            <div className="col-2">{this.showForm()}</div>
           </div>
         </div>
       </div>
@@ -29,4 +39,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    isEdit: state.isEdit,
+  };
+};
+
+export default connect(mapStateToProps)(App);
