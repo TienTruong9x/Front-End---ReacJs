@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.quay {
+  animation: App-logo-spin infinite 20s linear;
+}
