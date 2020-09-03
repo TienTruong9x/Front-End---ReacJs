@@ -1,0 +1,136 @@
+#loader {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+  height: 85%;
+  width: 100%;
+}
+path {
+  stroke: #fff;
+  stroke-width: 1px;
+  fill: none;
+  stroke-dasharray: 150, 200;
+  stroke-dashoffset: 0;
+  animation: pulse 6s infinite linear;
+}
+
+@keyframes pulse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1050;
+  }
+}
+
+/* heart */
+.heart {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: heart 1s ease infinite;
+}
+
+@keyframes heart {
+  96% {
+    transform: translate(-50%, -50%) scale(0.8, 0.8);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1, 1);
+  }
+}
+
+.heart div {
+  background: red;
+  width: 142px;
+  height: 235px;
+  top: 40px;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.left {
+  left: 45px;
+  transform: rotate(330deg);
+}
+
+.right {
+  right: 45px;
+  transform: rotate(30deg);
+}
+
+.quote{
+  margin: 0 auto;
+  text-align: center;
+  color:white;
+  z-index: 10;
+  position: absolute;
+  left: 46%;
+  top:35%;
+  transform: translate(-50%, -50%);
+  font-size: larger;
+}
+
+.status{
+  text-align: center;
+  color:white;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top:70%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
+
+
+@media screen and (max-width: 1980px) {
+  .quote{
+    left: 48%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .quote{
+    left: 47%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  svg {
+    height: 93%;
+  }
+  .quote{
+    left: 45%;
+  }
+}
+@media screen and (max-width: 320px) and (max-width:767px) {
+  .heart {
+    width: 150px;
+    height: 150px;
+  }
+  .heart div {
+    width: 35px;
+    height: 63px;
+  }
+  svg {
+    height: 97%;
+  }
+  .quote{
+    left: 40%;
+    top:41%;
+  }
+}
+

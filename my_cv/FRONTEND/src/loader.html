@@ -7,8 +7,12 @@
     <style>
       .loader {
         position: relative;
+        width: 120px;
+        /* height: 120px; */
+        /* text-align: center; */
       }
       .loader .circle {
+        box-sizing: border-box;
         border: 16px solid #f3f3f3;
         border-radius: 50%;
         border-top: 16px solid #3498db;
@@ -19,9 +23,9 @@
       }
       .loader .status {
         position: absolute;
-        top: 40%;
-        left: 4%;
-        transform: translate(50%, 50%);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
       @-webkit-keyframes spin {
         0% {
@@ -53,9 +57,9 @@
       let counter = 0;
       setInterval(() => {
         if (counter == 100) {
-          status.style.left = "3.3%";
           clearInterval();
-        } else {
+        } 
+        else {
           counter++;
           status.innerText = counter + "%";
         }

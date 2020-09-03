@@ -20,6 +20,7 @@ class AddNew extends Component {
   handleSubmit=(event)=>{
     event.preventDefault();
     this.props.addDataStore(this.state);
+    this.props.onAlert("Bạn vừa thêm mới : "+this.state.title,"add");
     this.setState({
         title:"",
         content:""
@@ -64,14 +65,17 @@ class AddNew extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    tes: state
+    isEdit: state.isEdit
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
     addDataStore: (newItem) => {
       dispatch({type:"ADD_NEW",newItem})
-    }
+    },
+    onAlert: (alertContent,doing) => {
+      dispatch({type:"ALERT_ON",alertContent,doing})
+    },
   }
 }
 
