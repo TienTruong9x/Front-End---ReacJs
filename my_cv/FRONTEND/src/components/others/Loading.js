@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Loading.css";
 import ReactDOM from "react-dom";
+import { connect } from "react-redux";
 
 class Loading extends Component {
   constructor(props) {
@@ -30,13 +31,18 @@ class Loading extends Component {
     clearInterval();
     let counter = 0;
     setInterval(() => {
-      if (counter == 100) {
+      if (counter >= 99) {
+        setTimeout(() => {
+          this.props.changeLoad();
+        }, 700);
+      }
+      if (counter >= 100) {
         clearInterval();
       } else {
-        counter++;
-        ReactDOM.render(counter+"%", document.querySelector("#status"));
+        counter += 5;
+        ReactDOM.render(counter + "%", document.querySelector("#status"));
       }
-    }, 50);
+    }, 100);
   };
 
   render() {
@@ -61,10 +67,23 @@ class Loading extends Component {
             />
           </svg>
         </div>
-        <div className="status" id="status">{this.showStatus()}</div>
+        <div className="status" id="status">
+          {this.showStatus()}
+        </div>
       </div>
     );
   }
 }
 
-export default Loading;
+const mapStateToProps = (state) => {
+  return {};
+};
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    changeLoad: () => {
+      dispatch({ type: "LOADED" });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Loading);
