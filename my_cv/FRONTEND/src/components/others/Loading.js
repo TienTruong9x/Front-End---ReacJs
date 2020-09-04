@@ -21,11 +21,13 @@ class Loading extends Component {
       status: 0,
     };
   }
+
   showQuote = () => {
     return this.state.quote[
       Math.floor(Math.random() * this.state.quote.length)
     ];
   };
+  
   showStatus = () => {
     clearInterval();
     let counter = 0;
