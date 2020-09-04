@@ -1,0 +1,53 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.nav > a {
+  padding: 6px 8px;
+  margin-right: 4px;
+  letter-spacing: 2px;
+  font-size: 13px;
+  transition: color 0.2s ease;
+  color: #aeb2b7;
+  position: relative;
+}
+.nav > a:before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #2fffad;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.2s;
+  z-index: 11;
+}
+.nav > a:after {
+  content: attr(data-text);
+  position: fixed;
+  bottom: 23%;
+  left: 40%;
+  transform: translate(-50%, 50%);
+  font-size: 8em;
+  letter-spacing: 500px;
+  font-weight: 900;
+  transition: all 0.4s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav > a:hover:after {
+  letter-spacing: 3px;
+  left: 50%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav > a:hover:before {
+  width: 85%;
+  z-index: 11;
+}
+
+.nav > a:hover .info{
+  visibility: hidden;
+}
