@@ -51,6 +51,7 @@
       <div class="circle"></div>
       <div class="status">100%</div>
     </div>
+    <img src="./asset/img/logo.png" />
     <script>
       clearInterval();
       let status = document.querySelector(".status");
@@ -58,8 +59,7 @@
       setInterval(() => {
         if (counter == 100) {
           clearInterval();
-        } 
-        else {
+        } else {
           counter++;
           status.innerText = counter + "%";
         }
