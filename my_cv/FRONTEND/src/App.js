@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Loading from "./components/others/Loading";
 import { connect } from "react-redux";
 import HEADER from "./components/header/HEADER";
+import Avatar from "./components/body/Avatar";
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,16 @@ class App extends Component {
     if (this.props.isLoadding) {
       return <Loading></Loading>;
     } else {
-      return <HEADER></HEADER>;
+      return (
+        <div>
+          {/* // Start Header */}
+          <HEADER></HEADER>
+          {/* // End Header */}
+          {/* // Start Body */}
+          <Avatar></Avatar>
+          {/* // End Body */}
+        </div>
+      );
     }
   };
   render() {

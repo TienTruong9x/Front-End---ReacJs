@@ -1,0 +1,25 @@
+.avatar_main {
+  position: relative;
+}
+.avatar_img {
+  width: 340px;
+  height: 325px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #857f7f 0%, black 100%);
+  border: 5px solid;
+  position: absolute;
+  top: -50px;
+}
+.avatar_img img {
+  width: 320px;
+  height: 300px;
+  border-radius: 100%;
+  border: 5px dotted #51dafb;
+}
+
+.avatar_info .name {
+  text-align: center;
+}
