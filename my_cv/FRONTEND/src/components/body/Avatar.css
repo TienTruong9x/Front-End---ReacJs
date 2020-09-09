@@ -11,7 +11,9 @@
   background-image: linear-gradient(to bottom, #857f7f 0%, black 100%);
   border: 5px solid;
   position: absolute;
-  top: -50px;
+  top: -10%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
 .avatar_img img {
   width: 320px;
@@ -20,6 +22,31 @@
   border: 5px dotted #51dafb;
 }
 
-.avatar_info .name {
+.avatar_info{
   text-align: center;
+  padding: 10rem 0 0;
+}
+.avatar_info .name {
+ font-size: 30px;
+}
+
+.avatar_info .gmail_github{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar_info .gmail_github p{
+  padding: 1rem;
+}
+.avatar_info .gmail_github i{
+  margin-left: 2rem;
+  font-size: 18px;
+ 
+}
+
+.avatar_info .gmail_github .gmail i{
+  color: #FE4A49;
+}
+.avatar_info .gmail_github .github i{
+  color: #2AB7CA;
 }

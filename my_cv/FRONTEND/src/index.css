@@ -15,3 +15,16 @@ code {
 a:hover{
   text-decoration: none;
 }
+
+.randomColor{
+  transition: all 30s ease;
+  animation: randomColor 30s infinite;
+}
+@keyframes randomColor{
+  15% { color: #FED766; } 
+  30% { color: #CC3699; } 
+  45% { color: #FE4A49; } 
+  60% { color: #035B96; }  
+  75% { color: #FF3377; }
+  100% { color: #7BC043; }  
+}

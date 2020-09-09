@@ -3,6 +3,7 @@ import Loading from "./components/others/Loading";
 import { connect } from "react-redux";
 import HEADER from "./components/header/HEADER";
 import Avatar from "./components/body/Avatar";
+import TimeLine from "./components/body/TimeLine";
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
           {/* // End Header */}
           {/* // Start Body */}
           <Avatar></Avatar>
+          <TimeLine></TimeLine>
           {/* // End Body */}
         </div>
       );
