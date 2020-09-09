@@ -4,12 +4,10 @@ import { connect } from "react-redux";
 import HEADER from "./components/header/HEADER";
 import Avatar from "./components/body/Avatar";
 import TimeLine from "./components/body/TimeLine";
+import Contact from "./components/footer/Contact";
+import Scroll from "./components/footer/Scroll";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   showPage = () => {
     if (this.props.isLoadding) {
       return <Loading></Loading>;
@@ -23,6 +21,10 @@ class App extends Component {
           <Avatar></Avatar>
           <TimeLine></TimeLine>
           {/* // End Body */}
+          {/* // Start Footer */}
+          <Contact></Contact>
+          <Scroll></Scroll>
+          {/* // End Footer */}
         </div>
       );
     }

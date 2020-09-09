@@ -7,7 +7,7 @@ class TimeLine extends Component {
       <div className="timeline_main">
         <div className="remuse randomColor">REMUSE</div>
         <div className="timeline">
-          <div className="contai left-item">
+          <div className="contai left-item" id="about">
             <div className="content">
               <h2 className="randomColor">ABOUT</h2>
               <ul>
@@ -18,7 +18,7 @@ class TimeLine extends Component {
             </div>
           </div>
           <div className="contai right-item">
-            <div className="content">
+            <div className="content" id="skill">
               <h2 className="randomColor">SKILLS</h2>
               <h3>Programming Languages:</h3>
               <ul>
@@ -62,13 +62,10 @@ class TimeLine extends Component {
             </div>
           </div>
           <div className="contai left-item">
-            <div className="content">
+            <div className="content" id="exp">
               <h2 className="randomColor">WORK EXPERIENCES</h2>
               <h3>Fresher Front - End in FPT Software (Fsoft) :</h3>
               <ul>
-                <li>
-                  Direct link : <a className="direct-link">Private</a>
-                </li>
                 <li>
                   Take part in projects ( WEB SOCIAL NETWORKING ) as Front End
                   Developer
@@ -77,15 +74,15 @@ class TimeLine extends Component {
             </div>
           </div>
           <div className="contai right-item">
-            <div className="content">
+            <div className="content" id="project">
               <h2 className="randomColor">PROJECTS</h2>
               <h3>WEB BACK-END DEVELOPER (Find Old Friend) :</h3>
               <ul>
                 <li>
-                  Direct link : <a className="direct-link">Private</a>
+                  Direct link : <a href="#project" className="direct-link">Private</a>
                 </li>
                 <li>
-                  Github:<a className="direct-link">Private</a>
+                  Github:<a href="#project" className="direct-link">Private</a>
                 </li>
                 <li>
                   Description:
@@ -94,7 +91,7 @@ class TimeLine extends Component {
                     friends when we grow up no contact no information with them.
                     I wanna collect the contact of my old friend. When I or user
                     login, allow them to update their profile, their contact.
-                    Someone can find there on the website.{" "}
+                    Someone can find there on the website.
                   </p>
                 </li>
                 <li>Team Size: 1</li>
@@ -106,10 +103,10 @@ class TimeLine extends Component {
               <h3>WEB PROJECT SALE BOOK :</h3>
               <ul>
                 <li>
-                  Direct link : <a className="direct-link">Private</a>
+                  Direct link : <a href="#project" className="direct-link">Private</a>
                 </li>
                 <li>
-                  Github:<a className="direct-link">Private</a>
+                  Github:<a href="#project" className="direct-link"> Private</a>
                 </li>
                 <li>
                   Description:
@@ -136,10 +133,10 @@ class TimeLine extends Component {
               <h3>WEB SOCIAL NETWORKING :</h3>
               <ul>
                 <li>
-                  Direct link : <a className="direct-link">Private</a>
+                  Direct link : <a href="#project" className="direct-link">Private</a>
                 </li>
                 <li>
-                  Github:<a className="direct-link">Private</a>
+                  Github:<a href="#project" className="direct-link">Private</a>
                 </li>
                 <li>
                   Description:
@@ -170,10 +167,10 @@ class TimeLine extends Component {
               <h3>WEB MY CV :</h3>
               <ul>
                 <li>
-                  Direct link : <a className="direct-link">Private</a>
+                  Direct link : <a href="#project" className="direct-link">Private</a>
                 </li>
                 <li>
-                  Github:<a className="direct-link">Private</a>
+                  Github:<a href="https://github.com/TienTruong9x/Front-End---ReactJs/tree/master/my_cv/FRONTEND"  target="_blank" className="direct-link" rel="noopener noreferrer"> Click here</a>
                 </li>
                 <li>
                   Description:
@@ -196,7 +193,7 @@ class TimeLine extends Component {
             </div>
           </div>
           <div className="contai left-item">
-            <div className="content">
+            <div className="content" id="edu">
               <h2 className="randomColor">EDUCATION</h2>
               <h3>Hanoi University of Business and Technology</h3>
               <ul>
@@ -210,7 +207,7 @@ class TimeLine extends Component {
             </div>
           </div>
           <div className="contai right-item">
-            <div className="content">
+            <div className="content" id="others">
               <h2 className="randomColor">Others</h2>
               <p>
               Besides the above skills, I also have many other talents serving my life as well as my work

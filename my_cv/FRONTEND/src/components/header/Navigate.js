@@ -11,21 +11,24 @@ class Navigate extends Component {
         <a href="#about" className="hd-about" data-text="ABOUT">
           ABOUT
         </a>
-        <a href="#skills" className="hd-skills" data-text="SKILLS">
+        <a href="#skill" className="hd-skills" data-text="SKILLS">
           SKILLs
         </a>
         <a
-          href="#experiences"
+          href="#exp"
           className="hd-experiences"
           data-text="EXPERIENCES"
         >
           EXPERIENCES
         </a>
-        <a href="#projects" className="hd-projects" data-text="PROJECTS">
+        <a href="#project" className="hd-projects" data-text="PROJECTS">
           PROJECTS
         </a>
-        <a href="#education" className="hd-education" data-text="EDUCATION">
+        <a href="#edu" className="hd-education" data-text="EDUCATION">
           EDUCATION
+        </a>
+        <a href="#others" className="hd-education" data-text="OTHERS">
+          OTHERS
         </a>
       </div>
     );

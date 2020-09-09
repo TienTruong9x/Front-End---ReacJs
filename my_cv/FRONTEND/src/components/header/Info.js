@@ -11,9 +11,9 @@ class Info extends Component {
         return (
             <div className="info" style={infoStyle}>
             <span className="details">
-                <h1 className>NGUYEN VAN TRUONG</h1>
+                <h1 className="">NGUYEN VAN TRUONG</h1>
                 <p>ReactJS Fresher</p>
-                <p className>03731.88868</p>
+                <p className="">03731.88868</p>
                 </span>
             </div>
         );
