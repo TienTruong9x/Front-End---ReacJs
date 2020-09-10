@@ -4,8 +4,33 @@ import ProcessBar from "./ProcessBar";
 import Logo from "./Logo";
 import Navigate from "./Navigate";
 import Info from "./Info";
+import NavMobile from "./NavMobile";
+import { connect } from "react-redux";
 
 class HEADER extends Component {
+  componentDidMount(){
+    var w = window.innerWidth;
+    this.props.reSize(w);
+    if(this.props.isMobile){
+      return <NavMobile></NavMobile>
+    }else{
+      return <Navigate></Navigate>
+    }
+  }
+  showNav = () => {
+
+    window.addEventListener("resize", () => {
+      var w = window.innerWidth;
+      this.props.reSize(w);
+    });
+
+    if(this.props.isMobile){
+      return <NavMobile></NavMobile>
+    }else{
+      return <Navigate></Navigate>
+    }
+
+  };
   render() {
     return (
       <div className="">
@@ -13,13 +38,24 @@ class HEADER extends Component {
         <div className="container animate-bottom">
           <div className="header">
             <Logo></Logo>
-            <Navigate></Navigate>
+            {this.showNav()}
           </div>
         </div>
-          <Info></Info>
+        <Info></Info>
       </div>
     );
   }
 }
-
-export default HEADER;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    isMobile:state.isMobile
+  }
+}
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    reSize: (w) => {
+      dispatch({type:"RESIZE",w})
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HEADER)
