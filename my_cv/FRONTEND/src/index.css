@@ -21,7 +21,7 @@ a:hover{
 }
 
 .randomColor{
-  transition: all 30s ease;
+  transition: color 30s ease;
   animation: randomColor 30s infinite;
 }
 @keyframes randomColor{

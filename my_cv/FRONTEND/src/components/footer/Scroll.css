@@ -41,3 +41,16 @@
 .scroll-main .btn-top button:hover{
     color: white;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1980px) {
+}
+
+@media screen and (min-width: 500px) and (max-width: 991px) {
+}
+
+@media screen and (max-width: 499px) {
+    .scroll-main {
+        padding: 0;
+        right: -15px;
+    }
+}
