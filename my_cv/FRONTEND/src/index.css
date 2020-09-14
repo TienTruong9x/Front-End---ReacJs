@@ -1,14 +1,16 @@
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  font-family: "Dancing Script", cursive;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #181a1b;
   color: #FFF;
+  overflow-x: hidden;
 }
 
 code {

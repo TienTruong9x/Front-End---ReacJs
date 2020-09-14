@@ -3,12 +3,12 @@ import "./Scroll.css";
 
 class Scroll extends Component {
 
-  constructor(props) {
-    super(props);
+ componentWillMount(){
     window.addEventListener("scroll",()=>{
       var scroll=document.querySelector('#scroll-main');
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
       scroll.style.opacity = 1;
+      scroll.style.position="fixed";
     }else{
       scroll.style.opacity=0;
     }

@@ -8,19 +8,11 @@ import NavMobile from "./NavMobile";
 import { connect } from "react-redux";
 
 class HEADER extends Component {
-  componentDidMount(){
-    var w = window.innerWidth;
-    this.props.reSize(w);
-    if(this.props.isMobile){
-      return <NavMobile></NavMobile>
-    }else{
-      return <Navigate></Navigate>
-    }
-  }
   showNav = () => {
-
+     var w = window.innerWidth;
+    this.props.reSize(w);
     window.addEventListener("resize", () => {
-      var w = window.innerWidth;
+      w = window.innerWidth;
       this.props.reSize(w);
     });
 

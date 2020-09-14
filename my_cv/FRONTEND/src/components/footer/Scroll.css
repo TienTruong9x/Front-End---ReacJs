@@ -50,7 +50,13 @@
 
 @media screen and (max-width: 499px) {
     .scroll-main {
+        position: absolute;
         padding: 0;
-        right: -15px;
+        right: -5px;
+        font-size: small;
+    }
+
+    .scroll-main .btn-top{
+        padding: 0;
     }
 }

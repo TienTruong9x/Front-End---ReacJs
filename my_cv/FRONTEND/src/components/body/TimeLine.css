@@ -115,7 +115,7 @@
   /* Full-width contais */
   .contai {
     width: 100%;
-    padding-left: 70px;
+    padding-left: 60px;
     padding-right: 25px;
   }
 
@@ -179,6 +179,12 @@
     font-size: 1.3rem;
   }
   .content li {
-    font-size: 19px;
+    font-size: 16px;
   }
+  .content p{
+    font-size: 16px;
+  }
+  .content h2 {
+    font-size: 25px;}
+    
 }

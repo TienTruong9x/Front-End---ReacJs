@@ -28,3 +28,15 @@
 .contact_main .contact-item i{
     font-size: 25px;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1980px) {
+}
+
+@media screen and (min-width: 500px) and (max-width: 991px) {
+}
+
+@media screen and (max-width: 499px) {
+    .contact_main .contact-title {
+        font-size: 35px;
+    }
+}
