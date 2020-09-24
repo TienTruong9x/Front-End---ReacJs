@@ -4,66 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .loader {
-        position: relative;
-        width: 120px;
-        /* height: 120px; */
-        /* text-align: center; */
-      }
-      .loader .circle {
-        box-sizing: border-box;
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid #3498db;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite; /* Safari */
-        animation: spin 2s linear infinite;
-      }
-      .loader .status {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      @-webkit-keyframes spin {
-        0% {
-          -webkit-transform: rotate(0deg);
-        }
-        100% {
-          -webkit-transform: rotate(360deg);
-        }
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
+    <style></style>
   </head>
-  <body>
-    <div class="loader">
-      <div class="circle"></div>
-      <div class="status">100%</div>
-    </div>
-    <img src="./asset/img/logo.png" />
-    <script>
-      clearInterval();
-      let status = document.querySelector(".status");
-      let counter = 0;
-      setInterval(() => {
-        if (counter == 100) {
-          clearInterval();
-        } else {
-          counter++;
-          status.innerText = counter + "%";
-        }
-      }, 20);
-    </script>
-  </body>
+  <body></body>
 </html>

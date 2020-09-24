@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./TimeLine";
+import "./TimeLine.css";
 
 class TimeLine extends Component {
   render() {
@@ -7,7 +7,7 @@ class TimeLine extends Component {
       <div>
         <div className="remuse">REMUSE</div>
         <div className="timeline">
-          <div className="container left">
+          <div className="contain left_item">
             <div className="content">
               <h2>2017</h2>
               <p>
@@ -18,7 +18,7 @@ class TimeLine extends Component {
               </p>
             </div>
           </div>
-          <div className="container right">
+          <div className="contain right_item">
             <div className="content">
               <h2>2016</h2>
               <p>
@@ -29,7 +29,7 @@ class TimeLine extends Component {
               </p>
             </div>
           </div>
-          <div className="container left">
+          <div className="contain left_item">
             <div className="content">
               <h2>2015</h2>
               <p>
@@ -40,7 +40,7 @@ class TimeLine extends Component {
               </p>
             </div>
           </div>
-          <div className="container right">
+          <div className="contain right_item">
             <div className="content">
               <h2>2012</h2>
               <p>
@@ -51,7 +51,7 @@ class TimeLine extends Component {
               </p>
             </div>
           </div>
-          <div className="container left">
+          <div className="contain left_item">
             <div className="content">
               <h2>2011</h2>
               <p>
@@ -62,7 +62,7 @@ class TimeLine extends Component {
               </p>
             </div>
           </div>
-          <div className="container right">
+          <div className="contain right_item">
             <div className="content">
               <h2>2007</h2>
               <p>
