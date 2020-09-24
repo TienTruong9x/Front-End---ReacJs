@@ -25,13 +25,13 @@
 .nav > a:after {
   content: attr(data-text);
   position: fixed;
-  bottom: 23%;
+  bottom: 70%;
   left: 40%;
   transform: translate(-50%, 50%);
   font-size: 8em;
   letter-spacing: 500px;
   font-weight: 900;
-  transition: all 0.4s;
+  transition: all 0.2s;
   opacity: 0;
   visibility: hidden;
 }

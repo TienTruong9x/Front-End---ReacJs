@@ -5,6 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+ 
 }
 
 svg {
@@ -82,6 +83,8 @@ path {
   top: 35%;
   transform: translate(-50%, -50%);
   font-size: larger;
+  font-family: "Dancing Script", cursive;
+  
 }
 
 .status {
@@ -93,6 +96,7 @@ path {
   top: 70%;
   transform: translate(-50%, -50%);
   font-size: 50px;
+  font-family: "Dancing Script", cursive;
 }
 
 @media screen and (max-width: 1980px) {
